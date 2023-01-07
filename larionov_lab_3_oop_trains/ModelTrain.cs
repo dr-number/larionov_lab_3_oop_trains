@@ -2,9 +2,26 @@
 {
     internal class ModelTrain
     {
-        private string number { get; set; }
-        private string Destination { get; set; }
-        private DateTime DepartureTime { get; set; }
+        private string number;
+        public string Number
+        {
+            get => number;
+            set => number = value;
+        }
+        private string destination;
+        
+        public string Destination
+        {
+            get => destination;
+            set => destination = value;
+        }
+
+        private DateTime departureTime;
+        public DateTime DepartureTime
+        {
+            get => departureTime;
+            set => departureTime = value;
+        }
 
     }
 }

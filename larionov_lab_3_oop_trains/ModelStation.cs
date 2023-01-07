@@ -11,5 +11,26 @@
 
             return trains[index];
         }
+
+        public List<ModelTrain> getTrains(DateTime afterDepartureTime)
+        {
+            List <ModelTrain> result = new List<ModelTrain>();
+
+            foreach (var item in trains)
+                if(item.DepartureTime > afterDepartureTime)
+                    result.Add(item);
+
+            return result;
+        }
+
+        public static bool operator ==(ModelTrain train1, ModelTrain train2)
+        {
+            return train1.DepartureTime == train2.DepartureTime;
+        }
+
+        public static bool operator !=(ModelTrain train1, ModelTrain train2)
+        {
+            return train1.DepartureTime != train2.DepartureTime;
+        }
     }
 }
