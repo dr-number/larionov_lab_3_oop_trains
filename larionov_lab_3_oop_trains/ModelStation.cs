@@ -2,7 +2,7 @@
 {
     internal class ModelStation
     {
-        private List<ModelTrain> trains;
+        private List<ModelTrain> trains = new List<ModelTrain>();
 
         public ModelTrain getTrain(int index)
         {
@@ -23,14 +23,10 @@
             return result;
         }
 
-        public static bool operator ==(ModelTrain train1, ModelTrain train2)
+        public void addTrain(ModelTrain train)
         {
-            return train1.DepartureTime == train2.DepartureTime;
+            trains.Add(train);
         }
 
-        public static bool operator !=(ModelTrain train1, ModelTrain train2)
-        {
-            return train1.DepartureTime != train2.DepartureTime;
-        }
     }
 }

@@ -16,8 +16,8 @@
             set => destination = value;
         }
 
-        private DateTime departureTime;
-        public DateTime DepartureTime
+        private MyTime departureTime;
+        public MyTime DepartureTime
         {
             get => departureTime;
             set => departureTime = value;
