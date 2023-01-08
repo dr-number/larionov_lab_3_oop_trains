@@ -23,5 +23,16 @@
             return trains;
         }
 
+        public List<ModelTrain> getTrainsDepartureTimeMoreThem(MyTime time)
+        {
+            List<ModelTrain> result = new List<ModelTrain>();
+
+            foreach (ModelTrain item in trains)
+                if(item.DepartureTime > time)
+                    result.Add(item);
+
+            return result;
+        }
+
     }
 }

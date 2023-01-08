@@ -129,5 +129,11 @@
 
             return result;
         }
+
+        public List<ModelTrain> sort(List<ModelTrain> data)
+        {
+            data.Sort(new ModelTrainSort());
+            return data;
+        }
     }
 }

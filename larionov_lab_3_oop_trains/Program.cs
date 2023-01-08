@@ -40,7 +40,7 @@
                 }
 
                 MyMessages.printMessage("Исходные данные: ", ConsoleColor.Yellow);
-                stantion.printTrains(stantion.getAllTrains());
+                stantion.printTrains(stantion.sort(stantion.getAllTrains()));
 
                 afterTime = myInput.inputTime("Введите время");
 
