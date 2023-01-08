@@ -18,7 +18,12 @@
 
         public void printTrains(List<ModelTrain> data)
         {
+            Console.WriteLine("{0,30}|   {1,30}|   {2,30}", "Номер поезда", "Время отправления", "Пункт назначения");
 
+            foreach (var item in data)
+                Console.WriteLine("{0,30}|   {1,30}|   {2,30}", item.Number, item.getTimeString(), item.Destination);
+
+            Console.WriteLine($"\nКоличество поездов: {data.Count}");
         }
 
         public bool saveToFile(string fileName, List<ModelTrain> data)
@@ -27,13 +32,9 @@
             bool result = false;
             try
             {
-                string departureTime;
                 file = new StreamWriter(fileName);
                 foreach (var item in data)
-                {
-                    departureTime = $"{item.DepartureTime.getHour()}:{item.DepartureTime.getMinute()}";
-                    file.WriteLine($"{item.Number}, {item.Destination}, {departureTime}");
-                }
+                    file.WriteLine($"{item.Number}, {item.Destination}, {item.getTimeString()}");
 
                 file.Close();
                 result = true;

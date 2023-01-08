@@ -23,5 +23,10 @@
             set => departureTime = value;
         }
 
+        public string getTimeString()
+        {
+            return $"{departureTime.getHour()}:{departureTime.getMinute()}";
+        }
+
     }
 }
