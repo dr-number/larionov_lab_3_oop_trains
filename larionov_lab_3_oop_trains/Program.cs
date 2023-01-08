@@ -38,8 +38,7 @@
 
                 }
 
-
-
+                MyMessages.pause();
             }
 
         }

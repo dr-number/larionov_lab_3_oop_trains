@@ -9,9 +9,9 @@
             MyInput myInput = new MyInput();
             ModelTrain train = new ModelTrain();
 
-            train.Number = myInput.inputText("Введите номер поезда (может содержать буквы и цифры): ");
+            train.Number = MyMessages.capitalize(myInput.inputText("Введите номер поезда (может содержать буквы и цифры): "));
             train.DepartureTime = myInput.inputTime("Введите время отправления: ");
-            train.Destination = myInput.inputText("Введите название пункта назначения: ");
+            train.Destination = MyMessages.capitalize(myInput.inputText("Введите название пункта назначения: "));
 
             stantion.addTrain(train);
         }
@@ -23,7 +23,7 @@
             foreach (var item in data)
                 Console.WriteLine("{0,30}|   {1,30}|   {2,30}", item.Number, item.getTimeString(), item.Destination);
 
-            Console.WriteLine($"\nКоличество поездов: {data.Count}");
+            MyMessages.printMessage($"\nКоличество поездов: {data.Count}", ConsoleColor.Yellow);
         }
 
         public bool saveToFile(string fileName, List<ModelTrain> data)

@@ -20,5 +20,19 @@
         {
             return capitalize(text.Trim());
         }
+
+        public static void pause()
+        {
+            Console.ResetColor();
+            Console.WriteLine("\nДля продолжения нажмите любую клавишу...");
+            Console.ReadLine();
+        }
+
+        public static void printMessage(string message, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
     }
 }
