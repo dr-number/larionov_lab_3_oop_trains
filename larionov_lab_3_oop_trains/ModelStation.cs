@@ -18,5 +18,10 @@
             trains.Add(train);
         }
 
+        public List<ModelTrain> getAllTrains()
+        {
+            return trains;
+        }
+
     }
 }

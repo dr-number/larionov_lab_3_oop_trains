@@ -15,6 +15,7 @@
 
             string select;
             Stantion stantion;
+            MyTime afterTime;
 
             while (true)
             {
@@ -37,6 +38,11 @@
                         stantion.addTrain();
 
                 }
+
+                MyMessages.printMessage("Исходные данные: ", ConsoleColor.Yellow);
+                stantion.printTrains(stantion.getAllTrains());
+
+                afterTime = myInput.inputTime("Введите время");
 
                 MyMessages.pause();
             }

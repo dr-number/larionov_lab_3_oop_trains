@@ -16,6 +16,11 @@
             stantion.addTrain(train);
         }
 
+        public List<ModelTrain> getAllTrains()
+        {
+            return stantion.getAllTrains();
+        }
+
         public void printTrains(List<ModelTrain> data)
         {
             Console.WriteLine("{0,30}|   {1,30}|   {2,30}", "Номер поезда", "Время отправления", "Пункт назначения");
@@ -23,7 +28,10 @@
             foreach (var item in data)
                 Console.WriteLine("{0,30}|   {1,30}|   {2,30}", item.Number, item.getTimeString(), item.Destination);
 
-            MyMessages.printMessage($"\nКоличество поездов: {data.Count}", ConsoleColor.Yellow);
+            if(data.Count != 0)
+                MyMessages.printMessage($"\nКоличество поездов: {data.Count}", ConsoleColor.Yellow);
+            else
+                MyMessages.printMessage($"\nПоездов нет!", ConsoleColor.Red);
         }
 
         public bool saveToFile(string fileName, List<ModelTrain> data)
