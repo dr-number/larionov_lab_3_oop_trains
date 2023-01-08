@@ -44,6 +44,9 @@
 
                 afterTime = myInput.inputTime("Введите время");
 
+                //MyMessages.printMessage($"Поезда, отправляющиеся после: {afterTime.getT}", ConsoleColor.Yellow); ; ; ;
+                stantion.printTrains(stantion.getTrainsDepartureTimeMoreThem(afterTime));
+
                 MyMessages.pause();
             }
 

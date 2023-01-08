@@ -21,6 +21,17 @@
             return stantion.getAllTrains();
         }
 
+        public List<ModelTrain> getTrainsDepartureTimeMoreThem(MyTime time)
+        {
+            List<ModelTrain> result = new List<ModelTrain>();
+
+            foreach (ModelTrain item in getAllTrains())
+                if (item.DepartureTime > time)
+                    result.Add(item);
+
+            return result;
+        }
+
         public void printTrains(List<ModelTrain> data)
         {
             Console.WriteLine("{0,30}|   {1,30}|   {2,30}", "Номер поезда", "Время отправления", "Пункт назначения");
