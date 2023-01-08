@@ -61,8 +61,8 @@
             Console.WriteLine(text);
 
             MyTime myTime = new MyTime();
-            myTime.Hour = inputInterval("Введите час: ", 0, 23);
-            myTime.Minute = inputInterval("\nВведите минуты: ", 0, 59);
+            myTime.setHour(inputInterval("Введите час: ", 0, 23));
+            myTime.setMinute(inputInterval("\nВведите минуты: ", 0, 59));
             return myTime;
         }
 

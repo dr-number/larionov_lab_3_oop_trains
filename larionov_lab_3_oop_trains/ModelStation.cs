@@ -12,16 +12,6 @@
             return trains[index];
         }
 
-        public List<ModelTrain> getTrains(DateTime afterDepartureTime)
-        {
-            List <ModelTrain> result = new List<ModelTrain>();
-
-            foreach (var item in trains)
-                if(item.DepartureTime > afterDepartureTime)
-                    result.Add(item);
-
-            return result;
-        }
 
         public void addTrain(ModelTrain train)
         {
