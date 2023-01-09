@@ -39,11 +39,6 @@
             }
         }
 
-        public string getTimeString()
-        {
-            return $"{departureTime.getHour()}:{departureTime.getMinute()}";
-        }
-
         public static bool operator >(ModelTrain t1, ModelTrain t2)
         {
             return t1.DepartureTime > t2.DepartureTime;

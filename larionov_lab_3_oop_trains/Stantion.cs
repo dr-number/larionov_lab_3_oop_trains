@@ -37,7 +37,7 @@
             Console.WriteLine("{0,30}|   {1,30}|   {2,30}", "Номер поезда", "Время отправления", "Пункт назначения");
 
             foreach (var item in data)
-                Console.WriteLine("{0,30}|   {1,30}|   {2,30}", item.Number, item.getTimeString(), item.Destination);
+                Console.WriteLine("{0,30}|   {1,30}|   {2,30}", item.Number, item.DepartureTime.getTimeString(), item.Destination);
 
             if(data.Count != 0)
                 MyMessages.printMessage($"\nКоличество поездов: {data.Count}", ConsoleColor.Yellow);
@@ -53,7 +53,7 @@
             {
                 file = new StreamWriter(fileName);
                 foreach (var item in data)
-                    file.WriteLine($"{item.Number}, {item.Destination}, {item.getTimeString()}");
+                    file.WriteLine($"{item.Number}, {item.Destination}, {item.DepartureTime.getTimeString()}");
 
                 file.Close();
                 result = true;

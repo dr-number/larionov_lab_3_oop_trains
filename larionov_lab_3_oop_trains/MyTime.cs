@@ -11,6 +11,11 @@ namespace larionov_lab_3_oop_trains
         public void setMinute(int minute) { this.minute = minute; }
         public int getMinute() { return minute; }
 
+        public string getTimeString()
+        {
+            return $"{hour}:{minute}";
+        }
+
 
         public static bool operator >(MyTime t1, MyTime t2)
         {
