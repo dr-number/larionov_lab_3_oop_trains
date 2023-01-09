@@ -25,7 +25,7 @@
                 stantion = new Stantion();
                 
                 if (MyMessages.isQuestion(Constants.QUESTION_LOAD_FROM_FILE))
-                    stantion.loadFromFile(INPUT_FILE_TRAINS);
+                    stantion.setAllTrains(stantion.loadFromFile(INPUT_FILE_TRAINS));
                 else
                 {
                     int countTrains = myInput.inputInterval("Сколько поездов добавить на станцию?: ", MIN_COUNT_TRAIN, MAX_COUNT_TRAIN);

@@ -21,6 +21,11 @@
             return stantion.getAllTrains();
         }
 
+        public void setAllTrains(List<ModelTrain> trains)
+        {
+            stantion.setAllTrains(trains);
+        }
+
         public List<ModelTrain> getTrainsDepartureTimeMoreThem(MyTime time)
         {
             List<ModelTrain> result = new List<ModelTrain>();

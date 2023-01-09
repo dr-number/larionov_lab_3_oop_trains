@@ -23,5 +23,11 @@
             return trains;
         }
 
+        public void setAllTrains(List<ModelTrain> trains)
+        {
+            this.trains = new List<ModelTrain>();
+            this.trains.AddRange(trains);
+        }
+
     }
 }
