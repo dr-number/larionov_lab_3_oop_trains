@@ -7,9 +7,9 @@
         private const int MIN_COUNT_TRAIN = 3;
         private const int MAX_COUNT_TRAIN = 10;
 
-        private const string INPUT_FILE_TRAINS = "file_trains.txt";
-        private const string OUT_FILE_TRAINS_AFTER_TIME = "file_trains_after_time.txt";
-        private const string OUT_FILE_TRAINS_WITH_DESTINATION = "file_trains_with_destination.txt";
+        private const string INPUT_FILE_TRAINS = "input_file_trains.txt";
+        private const string OUT_FILE_TRAINS_AFTER_TIME = "output_file_trains_after_time.txt";
+        private const string OUT_FILE_TRAINS_WITH_DESTINATION = "output_file_trains_with_destination.txt";
 
         static void Main(string[] args)
         {
