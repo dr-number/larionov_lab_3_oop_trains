@@ -32,6 +32,17 @@
             return result;
         }
 
+        public List<ModelTrain> trainsWithDestination(string destination)
+        {
+            List<ModelTrain> result = new List<ModelTrain>();
+
+            foreach (ModelTrain item in getAllTrains())
+                if (item.Destination == destination)
+                    result.Add(item);
+
+            return result;
+        }
+
         public void printTrains(List<ModelTrain> data)
         {
             Console.WriteLine("{0,30}|   {1,30}|   {2,30}", "Номер поезда", "Время отправления", "Пункт назначения");
