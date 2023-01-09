@@ -76,8 +76,7 @@
             }
             catch (Exception e)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Ошибка при записи в файл: {e.Message}");
+                MyMessages.printMessage($"Ошибка при записи в файл: {e.Message}", ConsoleColor.Red);
                 result = false;
             }
             finally
@@ -90,12 +89,9 @@
             }
 
             if (result)
-                Console.WriteLine($"\nДанные успешно сохранены в файл: {fileName}!");
+                MyMessages.printMessage($"\nДанные успешно сохранены в файл: {fileName}!", ConsoleColor.Green);
             else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\nОшибка при сохранении данных в файл: {fileName}!");
-            }
+                MyMessages.printMessage($"\nОшибка при сохранении данных в файл: {fileName}!", ConsoleColor.Red);
 
             return result;
         }
@@ -104,8 +100,7 @@
         {
             if (!File.Exists(kFileName))
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Файл {kFileName} не существует!");
+                MyMessages.printMessage($"Файл {kFileName} не существует!", ConsoleColor.Red);
                 return null;
             }
 
@@ -142,8 +137,7 @@
             }
             catch (Exception e)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Ошибка при чтении из файла: {e.Message}");
+                MyMessages.printMessage($"Ошибка при чтении из файла: {e.Message}", ConsoleColor.Red);
             }
             finally
             {
