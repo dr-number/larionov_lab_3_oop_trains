@@ -64,7 +64,7 @@
             {
                 file = new StreamWriter(fileName);
                 foreach (var item in data)
-                    file.WriteLine($"{item.Number}, {item.Destination}, {item.DepartureTime.getTimeString()}");
+                    file.WriteLine($"{item.Number}, {MyMessages.capitalize(item.Destination)}, {item.DepartureTime.getTimeString()}");
 
                 file.Close();
                 result = true;
@@ -121,7 +121,7 @@
 
                         train = new ModelTrain();
                         train.Number = number;
-                        train.Destination = destination;
+                        train.Destination = MyMessages.capitalize(destination);
 
                         MyTime time = new MyTime();
                         time.setHour(int.Parse(hour));
