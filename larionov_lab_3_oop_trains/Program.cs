@@ -46,9 +46,9 @@
                 stantion.printTrains(stantion.sort(stantion.getAllTrains()));
 
                 afterTime = myInput.inputTime("Поиск поездов время отправления которых больше чем: ");
-                MyMessages.printMessage($"Поезда, отправляющиеся после: {afterTime.getTimeString()}", ConsoleColor.Yellow);
-
                 List<ModelTrain> trainsAfterTime = stantion.sort(stantion.getTrainsDepartureTimeMoreThem(afterTime));
+
+                MyMessages.printMessage($"Поезда, отправляющиеся после: {afterTime.getTimeString()}", ConsoleColor.Yellow);
                 stantion.printTrains(trainsAfterTime);
 
                 if (trainsAfterTime.Count != 0 && MyMessages.isQuestion(Constants.QUESTION_SAVE_TO_FILE))
