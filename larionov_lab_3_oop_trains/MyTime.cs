@@ -13,7 +13,9 @@ namespace larionov_lab_3_oop_trains
 
         public string getTimeString()
         {
-            return $"{hour}:{minute}";
+            string resultHour = hour == 0 ? "00" : $"{hour}";
+            string resultMinute = minute == 0 ? "00" : $"{minute}";
+            return $"{resultHour}:{resultMinute}";
         }
 
 
