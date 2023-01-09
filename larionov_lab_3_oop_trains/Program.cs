@@ -57,7 +57,7 @@
                     stantion.saveToFile(OUT_FILE_TRAINS_WITH_DESTINATION, trainsWithDestination);
 
                 Console.ResetColor();
-                Console.WriteLine($"\nЧтобы выйти ввидите {EXIT}");
+                Console.WriteLine($"\nЧтобы выйти ввидите \"{EXIT}\", чтобы продолжить нажмите любую другую клавишу.");
                 if (Console.ReadLine() == EXIT)
                     break;
             }
