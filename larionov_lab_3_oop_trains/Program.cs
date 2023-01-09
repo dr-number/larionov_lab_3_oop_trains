@@ -16,20 +16,13 @@
             Console.WriteLine("Варинат №16. Железнодорожный вокзал. Ларионов Никита Юрьевич. гр. 210з\n");
             MyInput myInput = new MyInput();
 
-            string select, findWithDestination;
+            string findWithDestination;
+            MyTime findAfterTime;
             Stantion stantion;
-            MyTime afterTime;
 
             while (true)
             {
-                Console.ResetColor();
-                Console.WriteLine($"\nЧтобы выйти ввидите {EXIT}");
-                select = Console.ReadLine();
-
                 stantion = new Stantion();
-
-                if (select == EXIT)
-                    break;
                 
                 if (MyMessages.isQuestion(Constants.QUESTION_LOAD_FROM_FILE))
                     stantion.loadFromFile(INPUT_FILE_TRAINS);
@@ -45,10 +38,10 @@
                 MyMessages.printMessage("Исходные данные: ", ConsoleColor.Yellow);
                 stantion.printTrains(stantion.sort(stantion.getAllTrains()));
 
-                afterTime = myInput.inputTime("Поиск поездов время отправления которых больше чем: ");
-                List<ModelTrain> trainsAfterTime = stantion.sort(stantion.getTrainsDepartureTimeMoreThem(afterTime));
+                findAfterTime = myInput.inputTime("Поиск поездов время отправления которых больше чем: ");
+                List<ModelTrain> trainsAfterTime = stantion.sort(stantion.getTrainsDepartureTimeMoreThem(findAfterTime));
 
-                MyMessages.printMessage($"Поезда, отправляющиеся после: {afterTime.getTimeString()}", ConsoleColor.Yellow);
+                MyMessages.printMessage($"Поезда, отправляющиеся после: {findAfterTime.getTimeString()}", ConsoleColor.Yellow);
                 stantion.printTrains(trainsAfterTime);
 
                 if (trainsAfterTime.Count != 0 && MyMessages.isQuestion(Constants.QUESTION_SAVE_TO_FILE))
@@ -63,7 +56,10 @@
                 if (trainsWithDestination.Count != 0 && MyMessages.isQuestion(Constants.QUESTION_SAVE_TO_FILE))
                     stantion.saveToFile(OUT_FILE_TRAINS_WITH_DESTINATION, trainsWithDestination);
 
-                MyMessages.pause();
+                Console.ResetColor();
+                Console.WriteLine($"\nЧтобы выйти ввидите {EXIT}");
+                if (Console.ReadLine() == EXIT)
+                    break;
             }
 
         }
