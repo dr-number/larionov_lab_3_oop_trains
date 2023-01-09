@@ -40,9 +40,10 @@
         public List<ModelTrain> trainsWithDestination(string destination)
         {
             List<ModelTrain> result = new List<ModelTrain>();
+            destination = destination.ToLower();
 
             foreach (ModelTrain item in getAllTrains())
-                if (item.Destination == destination)
+                if (item.Destination.ToLower() == destination)
                     result.Add(item);
 
             return result;

@@ -47,7 +47,7 @@
                 if (trainsAfterTime.Count != 0 && MyMessages.isQuestion(Constants.QUESTION_SAVE_TO_FILE))
                     stantion.saveToFile(OUT_FILE_TRAINS_AFTER_TIME, trainsAfterTime);
 
-                findWithDestination = myInput.inputText("Поиск поездов по пункту назначения: ");
+                findWithDestination = myInput.inputText("\nПоиск поездов по пункту назначения: ");
                 List<ModelTrain> trainsWithDestination = stantion.sort(stantion.trainsWithDestination(findWithDestination));
 
                 MyMessages.printMessage($"Поезда, отправляющиеся в пункт назначения: {findWithDestination}", ConsoleColor.Yellow);
